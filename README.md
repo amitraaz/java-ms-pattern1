@@ -52,6 +52,33 @@ mvn spring-boot:run
 
 ## Testing the APIs
 
+### Option 1: Using Swagger UI (Easiest)
+
+Each microservice has its own interactive Swagger UI documentation:
+
+- **User Service (Microservice A)**: http://localhost:8081/swagger-ui/index.html
+- **Product Service (Microservice B)**: http://localhost:8082/swagger-ui/index.html
+- **Order Service (Microservice C)**: http://localhost:8083/swagger-ui/index.html
+
+You can test all APIs directly from the browser with a nice interface. Just click "Try it out" on any endpoint.
+
+OpenAPI JSON specs are also available at:
+- http://localhost:8081/v3/api-docs
+- http://localhost:8082/v3/api-docs
+- http://localhost:8083/v3/api-docs
+
+### Option 2: Using Postman
+
+Import the Postman collection file `Microservices-Tutorial.postman_collection.json` into Postman:
+1. Open Postman
+2. Click Import button
+3. Select the `Microservices-Tutorial.postman_collection.json` file
+4. The collection includes all API endpoints organized by service
+
+The collection uses a variable `gateway_url` set to http://localhost:8080 for easy configuration.
+
+### Option 3: Using cURL
+
 All requests go through the API Gateway at http://localhost:8080
 
 ### User Service (Microservice A)
